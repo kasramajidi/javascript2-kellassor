@@ -165,12 +165,29 @@
 
 // task 10
 
-function ArrayToObject(input){
-    return input.map((item) => ({
-        text: item,
-        length: item.length
-    }))
+// function ArrayToObject(input){
+//     return input.map((item) => ({
+//         text: item,
+//         length: item.length
+//     }))
+// }
+
+// console.log(ArrayToObject(['kasra', "hossien", "sahar"]))
+
+// task 11
+
+function numberString (input) {
+    const object = {}
+
+    input.forEach((item) => {
+        if(object[item]){
+            object[item]++;
+        }else{
+            object[item] = 1
+        }
+    })
+
+    return object
 }
 
-console.log(ArrayToObject(['kasra', "hossien", "sahar"]))
-
+console.log(numberString(['a', 'b', 'a', 'c', 'b', 'a']));
