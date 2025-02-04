@@ -176,18 +176,59 @@
 
 // task 11
 
-function numberString (input) {
-    const object = {}
+// function numberString (input) {
+//     const object = {}
 
-    input.forEach((item) => {
-        if(object[item]){
-            object[item]++;
-        }else{
-            object[item] = 1
-        }
-    })
+//     input.forEach((item) => {
+//         if(object[item]){
+//             object[item]++;
+//         }else{
+//             object[item] = 1
+//         }
+//     })
 
-    return object
+//     return object
+// }
+
+// console.log(numberString(['a', 'b', 'a', 'c', 'b', 'a']));
+
+
+// task 12
+
+const divAll = document.querySelector(".container")
+
+const api = async () => {
+    try{
+        const url = "https://jsonplaceholder.typicode.com/users"
+        const response = await fetch(url, {
+            method: "GET"
+        })
+
+        const data = await response.json()
+
+        createElement(data)
+
+    }catch(err){
+        console.log(err);
+    }
 }
 
-console.log(numberString(['a', 'b', 'a', 'c', 'b', 'a']));
+
+function createElement (input){
+    divAll.innerHTML = ''
+
+    input.forEach((item) => {
+        const divCart = document.createElement("div")
+        divCart.classList.add("card")
+        const h1card = document.createElement("h2")
+        h1card.textContent = item.name
+        const pCard = document.createElement("p")
+        pCard.textContent = item.email
+        divCart.append(h1card, pCard)
+        divAll.appendChild(divCart)
+    })
+
+}
+
+
+api()
