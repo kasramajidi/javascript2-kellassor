@@ -55,11 +55,38 @@
 
 // task 4
 
-function sortArray(inputArray) {
-    // اگر بخواهیم از کوچیک به بزرگ مرتب کنه این
-    return inputArray.sort((a, b) => a - b)
-    //    اگر بخواهیم از بزرگ به کوچیک مرتب کنه 
-    //    return inputArray.sort((a, b) => b - a)
+// function sortArray(inputArray) {
+//     // اگر بخواهیم از کوچیک به بزرگ مرتب کنه این
+//     return inputArray.sort((a, b) => a - b)
+//     //    اگر بخواهیم از بزرگ به کوچیک مرتب کنه 
+//     //    return inputArray.sort((a, b) => b - a)
+// }
+
+// console.log(sortArray([2, 6, 7, 20, 58, 1, 56]));
+
+
+// task 5
+
+function objectNumber(input) {
+    let count = 0;
+
+    Object.keys(input).forEach(keyObject => {
+        if (typeof input[keyObject] === 'object' && input[keyObject] !== null) {
+            count += objectNumber(input[keyObject]);
+        } else {
+            count += 1;
+        }
+    });
+
+    return count;
 }
 
-console.log(sortArray([2, 6, 7, 20, 58, 1, 56]));
+const myObject = {
+    name: 'kasra',
+    age: 21,
+    address: {
+        city: 'tehran',
+    },
+};
+
+console.log(objectNumber(myObject));
