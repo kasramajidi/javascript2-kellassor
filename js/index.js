@@ -101,18 +101,37 @@
 //     bodyAll.style.backgroundColor = "blue"
 // })
 
-const numberSpan = document.querySelector(".timer")
+//tasks 7
 
-let numberTimer = 10;
+// const numberSpan = document.querySelector(".timer")
 
-const timeInterval = setInterval(() =>{
-    if(numberTimer > 0){
-        numberTimer--;
-        numberSpan.textContent = numberTimer
-    }else{
-        clearInterval(timeInterval);
-        numberSpan.textContent = "وقت تمام شده"
-    }
-}, 1000)
+// let numberTimer = 10;
+
+// const timeInterval = setInterval(() =>{
+//     if(numberTimer > 0){
+//         numberTimer--;
+//         numberSpan.textContent = numberTimer
+//     }else{
+//         clearInterval(timeInterval);
+//         numberSpan.textContent = "وقت تمام شده"
+//     }
+// }, 1000)
 
 
+// task 8
+
+const divAll = document.querySelector(".div-btn")
+
+function createElement(){
+    const h1Element = document.createElement("h1")
+    h1Element.textContent = "kasra"
+    const spanElement = document.createElement("span")
+    spanElement.textContent= "this is the best site "
+    const removeBtn = document.createElement("button")
+    removeBtn.textContent= "remove" 
+    removeBtn.classList.add("btn")
+
+    divAll.append(h1Element, spanElement, removeBtn)
+}
+
+createElement()
