@@ -120,18 +120,45 @@
 
 // task 8
 
-const divAll = document.querySelector(".div-btn")
+// const divAll = document.querySelector(".div-btn")
 
-function createElement(){
-    const h1Element = document.createElement("h1")
-    h1Element.textContent = "kasra"
-    const spanElement = document.createElement("span")
-    spanElement.textContent= "this is the best site "
-    const removeBtn = document.createElement("button")
-    removeBtn.textContent= "remove" 
-    removeBtn.classList.add("btn")
+// function createElement(){
+//     const h1Element = document.createElement("h1")
+//     h1Element.textContent = "kasra"
+//     const spanElement = document.createElement("span")
+//     spanElement.textContent= "this is the best site "
+//     const removeBtn = document.createElement("button")
+//     removeBtn.textContent= "remove" 
+//     removeBtn.classList.add("btn")
 
-    divAll.append(h1Element, spanElement, removeBtn)
+//     divAll.append(h1Element, spanElement, removeBtn)
+// }
+
+// createElement()
+
+// task 9
+
+function isValidEmail(email) {
+    if (!email.includes("@")) return false
+
+    const parts = email.split("@")
+    
+    if (parts.length < 2 || parts[0].length === 0 || parts[1].length === 0){
+        return false
+    }
+
+    const domain = parts[1]
+
+    
+    if (!domain.includes(".")) return false
+    
+    const domainPart = domain.split(".")
+
+    if (domainPart.length < 2 || domainPart[domainPart.length - 1].length < 2){
+        return false
+    }
+
+    return true
 }
 
-createElement()
+console.log(isValidEmail("kasra@gmail.com"));
