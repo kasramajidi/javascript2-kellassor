@@ -94,9 +94,25 @@
 
 // task 6
 
-const btn = document.querySelector(".btn")
-const bodyAll = document.querySelector("body")
+// const btn = document.querySelector(".btn")
+// const bodyAll = document.querySelector("body")
 
-btn.addEventListener("click", () => {
-    bodyAll.style.backgroundColor = "blue"
-})
+// btn.addEventListener("click", () => {
+//     bodyAll.style.backgroundColor = "blue"
+// })
+
+const numberSpan = document.querySelector(".timer")
+
+let numberTimer = 10;
+
+const timeInterval = setInterval(() =>{
+    if(numberTimer > 0){
+        numberTimer--;
+        numberSpan.textContent = numberTimer
+    }else{
+        clearInterval(timeInterval);
+        numberSpan.textContent = "وقت تمام شده"
+    }
+}, 1000)
+
+
