@@ -67,26 +67,36 @@
 
 // task 5
 
-function objectNumber(input) {
-    let count = 0;
+// function objectNumber(input) {
+//     let count = 0;
 
-    Object.keys(input).forEach(keyObject => {
-        if (typeof input[keyObject] === 'object' && input[keyObject] !== null) {
-            count += objectNumber(input[keyObject]);
-        } else {
-            count += 1;
-        }
-    });
+//     Object.keys(input).forEach(keyObject => {
+//         if (typeof input[keyObject] === 'object' && input[keyObject] !== null) {
+//             count += objectNumber(input[keyObject]);
+//         } else {
+//             count += 1;
+//         }
+//     });
 
-    return count;
-}
+//     return count;
+// }
 
-const myObject = {
-    name: 'kasra',
-    age: 21,
-    address: {
-        city: 'tehran',
-    },
-};
+// const myObject = {
+//     name: 'kasra',
+//     age: 21,
+//     address: {
+//         city: 'tehran',
+//     },
+// };
 
-console.log(objectNumber(myObject));
+// console.log(objectNumber(myObject));
+
+
+// task 6
+
+const btn = document.querySelector(".btn")
+const bodyAll = document.querySelector("body")
+
+btn.addEventListener("click", () => {
+    bodyAll.style.backgroundColor = "blue"
+})
