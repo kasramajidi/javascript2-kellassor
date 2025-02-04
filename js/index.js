@@ -34,22 +34,32 @@
 
 // task 3
 
-const btn = document.querySelector(".btn")
-const spanAll = document.querySelector(".div-span")
+// const btn = document.querySelector(".btn")
+// const spanAll = document.querySelector(".div-span")
 
-btn.addEventListener("click", () => jokeFunction())
+// btn.addEventListener("click", () => jokeFunction())
 
-const jokeFunction = async () => {
-    const url = "https://api.chucknorris.io/jokes/random"
+// const jokeFunction = async () => {
+//     const url = "https://api.chucknorris.io/jokes/random"
 
-    const response = await fetch(url, {
-        method: "GET"
-    })
+//     const response = await fetch(url, {
+//         method: "GET"
+//     })
 
-    const data = await response.json();
+//     const data = await response.json();
 
 
-    spanAll.textContent = data.value
+//     spanAll.textContent = data.value
 
-};
+// };
 
+// task 4
+
+function sortArray(inputArray) {
+    // اگر بخواهیم از کوچیک به بزرگ مرتب کنه این
+    return inputArray.sort((a, b) => a - b)
+    //    اگر بخواهیم از بزرگ به کوچیک مرتب کنه 
+    //    return inputArray.sort((a, b) => b - a)
+}
+
+console.log(sortArray([2, 6, 7, 20, 58, 1, 56]));
