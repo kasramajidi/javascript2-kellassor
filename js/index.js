@@ -138,27 +138,39 @@
 
 // task 9
 
-function isValidEmail(email) {
-    if (!email.includes("@")) return false
+// function isValidEmail(email) {
+//     if (!email.includes("@")) return false
 
-    const parts = email.split("@")
+//     const parts = email.split("@")
     
-    if (parts.length < 2 || parts[0].length === 0 || parts[1].length === 0){
-        return false
-    }
+//     if (parts.length < 2 || parts[0].length === 0 || parts[1].length === 0){
+//         return false
+//     }
 
-    const domain = parts[1]
+//     const domain = parts[1]
 
     
-    if (!domain.includes(".")) return false
+//     if (!domain.includes(".")) return false
     
-    const domainPart = domain.split(".")
+//     const domainPart = domain.split(".")
 
-    if (domainPart.length < 2 || domainPart[domainPart.length - 1].length < 2){
-        return false
-    }
+//     if (domainPart.length < 2 || domainPart[domainPart.length - 1].length < 2){
+//         return false
+//     }
 
-    return true
+//     return true
+// }
+
+// console.log(isValidEmail("kasra@gmail.com"));
+
+// task 10
+
+function ArrayToObject(input){
+    return input.map((item) => ({
+        text: item,
+        length: item.length
+    }))
 }
 
-console.log(isValidEmail("kasra@gmail.com"));
+console.log(ArrayToObject(['kasra', "hossien", "sahar"]))
+
